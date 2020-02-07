@@ -5,7 +5,7 @@ import { toHtml, getDimensions } from './plugins';
 
 class BaseComponent {
 
-  constructor (component, data, options = {}) {
+  constructor(component, data, options = {}) {
     if (!(this instanceof BaseComponent)) {
       return new BaseComponent(component, data);
     }

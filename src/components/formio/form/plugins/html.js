@@ -11,27 +11,13 @@ export default (element, component) => {
     componentElement.appendChild(FormioExportUtils.createElement('h1', { class: 'form-title' }, component.title));
 
     if (component._options.submission) {
-      if (component._options.submission.hasOwnProperty('owner')) {
-        componentElement.appendChild(FormioExportUtils.createElement('div', { class: 'row' },
-          FormioExportUtils.createElement('div', { class: 'col text-right text-bold' }, 'submission owner:'),
-          FormioExportUtils.createElement('div', { class: 'col text-left' }, component._options.submission.owner))
-        );
-      }
 
       if (component._options.submission.hasOwnProperty('id')) {
+        const boldElement = FormioExportUtils.createElement('b', {},'formIO submission ID: ')
         componentElement.appendChild(FormioExportUtils.createElement('div', { class: 'row' },
-          FormioExportUtils.createElement('div', { class: 'col text-right text-bold' }, 'submission id:'),
-          FormioExportUtils.createElement('div', { class: 'col text-left' }, component._options.submission.id))
+          FormioExportUtils.createElement('div', { class: 'col text-center' }, boldElement, `${component._options.submission.id}`)
+        )
         );
-      }
-
-      if (component._options.submission.hasOwnProperty('modified')) {
-        let date = component._options.submission.modified.replace('T', ' ').split('.')[0] + ' UTC';
-
-        componentElement.appendChild(FormioExportUtils.createElement('div', { class: 'row' },
-          FormioExportUtils.createElement('div', { class: 'col text-right text-bold' }, 'modified:'),
-          FormioExportUtils.createElement('div', { class: 'col text-left' }, date)
-        ));
       }
     }
 
