@@ -19,7 +19,7 @@ export default (element, component) => {
         class: 'component-label card-header'
       }, component.label);
       let valueElement = FormioExportUtils.createElement('div', {
-        class: 'component-value card-body'
+        class: 'component-value pl-2 card-body'
       });
       valueElement.innerHTML = component._value;
       componentElement.appendChild(labelElement);

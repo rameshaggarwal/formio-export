@@ -13,7 +13,7 @@ export default (element, component) => {
     if (component._options.submission) {
 
       if (component._options.submission.hasOwnProperty('id')) {
-        const boldElement = FormioExportUtils.createElement('b', {},'formIO submission ID: ')
+        const boldElement = FormioExportUtils.createElement('b', {}, 'SA submission ID: ');
         componentElement.appendChild(FormioExportUtils.createElement('div', { class: 'row' },
           FormioExportUtils.createElement('div', { class: 'col text-center' }, boldElement, `${component._options.submission.id}`)
         )
